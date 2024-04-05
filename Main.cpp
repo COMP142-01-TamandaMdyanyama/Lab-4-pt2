@@ -5,13 +5,10 @@
 * \copyright University of Nicosia
 */
 #include <iostream>
+#include <cassert>
 using namespace std;
 
-//Global costants
-const int MAX_COL = 5;
-
-//Function Prototypes
-void printMatrix(const double mat[][MAX_COL], const int maxRow);
+#include "Matrix.h"
 
 /**
 * Shows the menu, user makes a selection.
@@ -47,19 +44,3 @@ int main() {
 	return 0;
 }
 
-/**
-*The function prints the values of the matrix
-* @param mat The matrix to be printed
-* @param maxRow The number of rows of the matrix
-*/
-void printMatrix(const double mat[][MAX_COL], const int maxRow) {
-	cout << "Content of the matrix: " << endl;
-
-	for (int i = 0; i < maxRow; i++) {
-		cout << "\nR" << i << ": ";
-		for (int j = 0; j < MAX_COL; j++) {
-			cout << mat[i][j] << "\t";  //@todo use setw to make it neater
-		}
-	}
-	cout << endl;
-}
