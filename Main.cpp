@@ -14,7 +14,7 @@ using namespace std;
 
 //temporary function prototypes
 //double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow);
-double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow);
+
 
 
 /**
@@ -62,10 +62,4 @@ int main() {
 
 	return 0;
 }
-double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow) {
-	double sum = 0;
-	for (int i = 0; i < maxRow; i++) {
-		sum += mat[i][column];
-	  }
-	return sum;
-}
+
