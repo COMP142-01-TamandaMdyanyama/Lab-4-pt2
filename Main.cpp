@@ -13,9 +13,9 @@ using namespace std;
 #include "Matrix.h"
 
 //temporary function prototypes
-//double sumAll(const double mat[][MAX_COL],const int maxRow);
+double sumAll(const double mat[][MAX_COL],const int maxRow);
 //double average(const double mat[][MAX_COL],const int maxRow);
-double findMax(const double mat[][MAX_COL], const int maxRow);
+
 
 
 
@@ -36,7 +36,8 @@ int main() {
 		cout << "3) Sum a row " << endl;
 		cout << "4) Sum a column " << endl;
 		cout << "5) Find the maximum value" << endl;
-		cout << "6) Calculate average number of matrix " << endl;
+		cout << "6) Sum up all values in the matrix " << endl;
+		cout << "7) Calculate average number of matrix " << endl;
 		cout << "8) Exit " << endl;
 		cout << " Please enter a choice " << endl;
 		cin >> choice;
@@ -62,6 +63,12 @@ int main() {
 			break;
 		case 5:
 			cout << "\nThe highest value in the matrix is :" << findMax(mat, MAX_ROW) << endl;
+			break;
+		case 6:
+			cout << "\nThe sum of the matrix is :" << sumAll(mat, MAX_ROW) << endl;
+			break;
+		case 7:
+			break;
 		case 8:
 			//No code needed
 			break;
@@ -72,20 +79,18 @@ int main() {
 
 	return 0;
 }
-  /**
-  This function find the highest value in the matrix
- @param mat The matrix
- @param maxRow The number of rows available
- @return max The highest value in the matrix
-  */
-double findMax(const double mat[][MAX_COL], const int maxRow) {
-	double max = mat[0][0];
+/**
+* This function sum all the values in the matrix
+* @param mat The matrix
+* @param maxRow The number of rows available
+* @return sum The total of all entries in the matrix
+ */
+double sumAll(const double mat[][MAX_COL], const int maxRow) {
+	double sum=0;
 	for (int i = 0; i < maxRow; i++) {
 		for (int j = 0; j < MAX_COL; j++) {
-			if (mat[i][j] > max)
-				max = mat[i][j];
+			sum += mat[i][j];
 		}
 	}
-	return max;
+	return sum;
 }
-

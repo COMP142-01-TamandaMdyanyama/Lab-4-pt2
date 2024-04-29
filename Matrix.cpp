@@ -71,3 +71,20 @@ double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow) {
 	}
 	return sum;
 }
+
+/**
+* This function find the highest value in the matrix
+* @param mat The matrix
+* @param maxRow The number of rows available
+* @return max The highest value in the matrix
+ */
+double findMax(const double mat[][MAX_COL], const int maxRow) {
+	double max = mat[0][0];
+	for (int i = 0; i < maxRow; i++) {
+		for (int j = 0; j < MAX_COL; j++) {
+			if (mat[i][j] > max)
+				max = mat[i][j];
+		}
+	}
+	return max;
+}
