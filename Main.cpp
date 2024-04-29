@@ -23,7 +23,7 @@ double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow)
 * @return Returns 0
 */
 int main() {
-	srand(NULL);
+	srand(time(NULL));
 	const int MAX_ROW = 5;
 	int choice;
 	double mat[MAX_ROW][MAX_COL] = { 0 };
@@ -45,6 +45,14 @@ int main() {
 		case 2:
 			printMatrix(mat, MAX_ROW);
 			break;
+		case 3:
+			break;
+		case 4:
+			int col;
+			cout << "Which column would you like to sum up? (0 based) --->" ;
+			cin >> col;
+			cout<< "\nSum of column "<< col << " is:"<< sumOfCol(mat, col, MAX_ROW);
+			break;
 		case 8:
 			break;
 
@@ -55,5 +63,9 @@ int main() {
 	return 0;
 }
 double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow) {
-
+	double sum = 0;
+	for (int i = 0; i < maxRow; i++) {
+		sum += mat[i][column];
+	  }
+	return sum;
 }
