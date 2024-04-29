@@ -14,7 +14,7 @@ using namespace std;
 
 //temporary function prototypes
 double sumAll(const double mat[][MAX_COL],const int maxRow);
-//double average(const double mat[][MAX_COL],const int maxRow);
+double average(const double mat[][MAX_COL],const int maxRow);
 
 
 
@@ -68,6 +68,7 @@ int main() {
 			cout << "\nThe sum of the matrix is :" << sumAll(mat, MAX_ROW) << endl;
 			break;
 		case 7:
+			cout << "\nThe average value of the matrix is: " << average(mat, MAX_ROW) << endl;
 			break;
 		case 8:
 			//No code needed
@@ -93,4 +94,14 @@ double sumAll(const double mat[][MAX_COL], const int maxRow) {
 		}
 	}
 	return sum;
+}
+
+/**
+* This function find the average of all entries in the matrix
+* @param mat The matrix
+* @param maxRow The number of rows available
+* @return The average of all entries in the matrix
+ */
+double average(const double mat[][MAX_COL], const int maxRow) {
+	return sumAll(mat, maxRow) / (MAX_COL * maxRow);
 }
