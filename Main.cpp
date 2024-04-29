@@ -13,7 +13,7 @@ using namespace std;
 #include "Matrix.h"
 
 //temporary function prototypes
-//double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow);
+double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow);
 
 
 
@@ -46,12 +46,16 @@ int main() {
 			printMatrix(mat, MAX_ROW);
 			break;
 		case 3:
+			int row;
+			cout << "Which row would you like to sum up? (0 based) --->";
+			cin >> row;
+			cout << "\nSum of row " << row << " is:" << sumOfRow(mat, row, MAX_ROW)<<endl;
 			break;
 		case 4:
 			int col;
 			cout << "Which column would you like to sum up? (0 based) --->" ;
 			cin >> col;
-			cout<< "\nSum of column "<< col << " is:"<< sumOfCol(mat, col, MAX_ROW);
+			cout<< "\nSum of column "<< col << " is:"<< sumOfCol(mat, col, MAX_ROW)<<endl;
 			break;
 		case 8:
 			break;
@@ -63,3 +67,17 @@ int main() {
 	return 0;
 }
 
+/**
+*The function sums up values across a given row
+* @param mat The matrix 
+* @param row The given row to sum across
+* @param maxRow The number of rows of the matrix
+* @return sum The summation of the row
+*/
+double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow) {
+	double sum = 0;
+	for (int i = 0; i < MAX_COL; i++) {
+		sum += mat[row][i];
+	}
+	return sum;
+}
