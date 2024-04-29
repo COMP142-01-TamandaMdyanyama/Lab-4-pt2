@@ -12,13 +12,6 @@ using namespace std;
 //User defined libraries 
 #include "Matrix.h"
 
-//temporary function prototypes
-double sumAll(const double mat[][MAX_COL],const int maxRow);
-double average(const double mat[][MAX_COL],const int maxRow);
-
-
-
-
 /**
 * Shows the menu, user makes a selection.
 * <BR>
@@ -77,31 +70,5 @@ int main() {
 		}
 	} while (choice != 8);
 
-
 	return 0;
-}
-/**
-* This function sum all the values in the matrix
-* @param mat The matrix
-* @param maxRow The number of rows available
-* @return sum The total of all entries in the matrix
- */
-double sumAll(const double mat[][MAX_COL], const int maxRow) {
-	double sum=0;
-	for (int i = 0; i < maxRow; i++) {
-		for (int j = 0; j < MAX_COL; j++) {
-			sum += mat[i][j];
-		}
-	}
-	return sum;
-}
-
-/**
-* This function find the average of all entries in the matrix
-* @param mat The matrix
-* @param maxRow The number of rows available
-* @return The average of all entries in the matrix
- */
-double average(const double mat[][MAX_COL], const int maxRow) {
-	return sumAll(mat, maxRow) / (MAX_COL * maxRow);
 }
