@@ -7,6 +7,7 @@
 
 #include "Matrix.h"
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -21,9 +22,22 @@ void printMatrix(const double mat[][MAX_COL], const int maxRow) {
 	for (int i = 0; i < maxRow; i++) {
 		cout << "\nR" << i << ": ";
 		for (int j = 0; j < MAX_COL; j++) {
-			cout << mat[i][j] << "\t";  //@todo use setw to make it neater
+			cout << mat[i][j] << setw(5);  
 		}
 	}
 	cout << endl;
 	cout << endl;
+}
+
+/**
+* The function fills the matrix with random values
+* @param mat The matrix to be printed
+* @param maxRow The number of rows of the matrix
+*/
+void fillWithRandomNum(double mat[][MAX_COL], const int maxRow) {
+	for (int i = 0; i < maxRow; i++) {
+		for (int j = 0; j < MAX_COL; j++) {
+			mat[i][j] = rand() % 100;
+		}
+	}
 }

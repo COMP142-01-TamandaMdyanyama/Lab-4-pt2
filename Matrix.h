@@ -10,5 +10,6 @@ const int MAX_COL = 5;
 
 //Function Prototypes
 void printMatrix(const double mat[][MAX_COL], const int maxRow);
+void fillWithRandomNum(double mat[][MAX_COL], const int maxRow);
 
 #pragma once

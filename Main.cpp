@@ -6,9 +6,16 @@
 */
 #include <iostream>
 #include <cassert>
+#include <ctime>
 using namespace std;
 
+//User defined libraries 
 #include "Matrix.h"
+
+//temporary function prototypes
+//double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow);
+double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow);
+
 
 /**
 * Shows the menu, user makes a selection.
@@ -16,20 +23,24 @@ using namespace std;
 * @return Returns 0
 */
 int main() {
-
+	srand(NULL);
 	const int MAX_ROW = 5;
 	int choice;
 	double mat[MAX_ROW][MAX_COL] = { 0 };
 
 	do {
-		cout << "1) Fill with  random numbers " << endl;
+		cout << "\n1) Fill with  random numbers " << endl;
 		cout << "2) Print Matrix " << endl;
+		cout << "3) sum a row " << endl;
+		cout << "4) sum a column " << endl;
+		cout << "5) transpose matrix " << endl;
 		cout << "8) Exit " << endl;
 		cout << " Please enter a choice " << endl;
 		cin >> choice;
 
 		switch (choice) {
 		case 1:
+			fillWithRandomNum(mat, MAX_ROW);
 			break;
 		case 2:
 			printMatrix(mat, MAX_ROW);
@@ -43,4 +54,6 @@ int main() {
 
 	return 0;
 }
+double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow) {
 
+}
