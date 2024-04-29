@@ -13,7 +13,7 @@ using namespace std;
 #include "Matrix.h"
 
 //temporary function prototypes
-double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow);
+
 
 
 
@@ -67,17 +67,4 @@ int main() {
 	return 0;
 }
 
-/**
-*The function sums up values across a given row
-* @param mat The matrix 
-* @param row The given row to sum across
-* @param maxRow The number of rows of the matrix
-* @return sum The summation of the row
-*/
-double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow) {
-	double sum = 0;
-	for (int i = 0; i < MAX_COL; i++) {
-		sum += mat[row][i];
-	}
-	return sum;
-}
+
