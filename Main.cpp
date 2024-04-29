@@ -13,7 +13,9 @@ using namespace std;
 #include "Matrix.h"
 
 //temporary function prototypes
-
+//double sumAll(const double mat[][MAX_COL],const int maxRow);
+//double average(const double mat[][MAX_COL],const int maxRow);
+double findMax(const double mat[][MAX_COL], const int maxRow);
 
 
 
@@ -31,9 +33,10 @@ int main() {
 	do {
 		cout << "\n1) Fill with  random numbers " << endl;
 		cout << "2) Print Matrix " << endl;
-		cout << "3) sum a row " << endl;
-		cout << "4) sum a column " << endl;
-		cout << "5) transpose matrix " << endl;
+		cout << "3) Sum a row " << endl;
+		cout << "4) Sum a column " << endl;
+		cout << "5) Find the maximum value" << endl;
+		cout << "6) Calculate average number of matrix " << endl;
 		cout << "8) Exit " << endl;
 		cout << " Please enter a choice " << endl;
 		cin >> choice;
@@ -57,7 +60,10 @@ int main() {
 			cin >> col;
 			cout<< "\nSum of column "<< col << " is:"<< sumOfCol(mat, col, MAX_ROW)<<endl;
 			break;
+		case 5:
+			cout << "\nThe highest value in the matrix is :" << findMax(mat, MAX_ROW) << endl;
 		case 8:
+			//No code needed
 			break;
 
 		}
@@ -66,5 +72,20 @@ int main() {
 
 	return 0;
 }
-
+  /**
+  This function find the highest value in the matrix
+ @param mat The matrix
+ @param maxRow The number of rows available
+ @return max The highest value in the matrix
+  */
+double findMax(const double mat[][MAX_COL], const int maxRow) {
+	double max = mat[0][0];
+	for (int i = 0; i < maxRow; i++) {
+		for (int j = 0; j < MAX_COL; j++) {
+			if (mat[i][j] > max)
+				max = mat[i][j];
+		}
+	}
+	return max;
+}
 
