@@ -44,14 +44,20 @@ int main() {
 			break;
 		case 3:
 			int row;
-			cout << "Which row would you like to sum up? (0 based) --->";
-			cin >> row;
+			do {
+				cout << "Which row would you like to sum up? (0 based) --->";
+				cin >> row;
+			} while ((row < 0)||(row>MAX_ROW));
+		
 			cout << "\nSum of row " << row << " is:" << sumOfRow(mat, row, MAX_ROW)<<endl;
 			break;
 		case 4:
 			int col;
-			cout << "Which column would you like to sum up? (0 based) --->" ;
-			cin >> col;
+			do {
+				cout << "Which column would you like to sum up? (0 based) --->";
+				cin >> col;
+			} while ((col < 0)||(col>MAX_COL));
+			
 			cout<< "\nSum of column "<< col << " is:"<< sumOfCol(mat, row, MAX_ROW)<<endl;
 			break;
 		case 5:
@@ -73,4 +79,3 @@ int main() {
 	return 0;
 }
 
-//@todo, add logical bugs, only three.
