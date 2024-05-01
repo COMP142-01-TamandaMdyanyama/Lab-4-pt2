@@ -52,7 +52,7 @@ int main() {
 			int col;
 			cout << "Which column would you like to sum up? (0 based) --->" ;
 			cin >> col;
-			cout<< "\nSum of column "<< col << " is:"<< sumOfCol(mat, col, MAX_ROW)<<endl;
+			cout<< "\nSum of column "<< col << " is:"<< sumOfCol(mat, row, MAX_ROW)<<endl;
 			break;
 		case 5:
 			cout << "\nThe highest value in the matrix is :" << findMax(mat, MAX_ROW) << endl;
@@ -72,3 +72,5 @@ int main() {
 
 	return 0;
 }
+
+//@todo, add logical bugs, only three.

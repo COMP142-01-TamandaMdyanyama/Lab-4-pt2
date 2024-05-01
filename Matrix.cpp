@@ -8,6 +8,7 @@
 #include "Matrix.h"
 #include <iostream>
 #include <iomanip>
+#include <cassert>
 
 using namespace std;
 
@@ -50,6 +51,7 @@ void fillWithRandomNum(double mat[][MAX_COL], const int maxRow) {
 * @return sum The summation of all the values in the given column
 */
 double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow) {
+	assert(column > 0);
 	double sum = 0;
 	for (int i = 0; i < maxRow; i++) {
 		sum += mat[i][column];
@@ -65,6 +67,7 @@ double sumOfCol(const double mat[][MAX_COL], const int column, const int maxRow)
 * @return sum The summation of the row
 */
 double sumOfRow(const double mat[][MAX_COL], const int row, const int maxRow) {
+	assert(row > 0);
 	double sum = 0;
 	for (int i = 0; i < MAX_COL; i++) {
 		sum += mat[row][i];
@@ -82,7 +85,7 @@ double findMax(const double mat[][MAX_COL], const int maxRow) {
 	double max = mat[0][0];
 	for (int i = 0; i < maxRow; i++) {
 		for (int j = 0; j < MAX_COL; j++) {
-			if (mat[i][j] > max)
+			if (mat[i][j] < max)
 				max = mat[i][j];
 		}
 	}
@@ -98,7 +101,7 @@ double findMax(const double mat[][MAX_COL], const int maxRow) {
 double sumAll(const double mat[][MAX_COL], const int maxRow) {
 	double sum = 0;
 	for (int i = 0; i < maxRow; i++) {
-		for (int j = 0; j < MAX_COL; j++) {
+		for (int j = 0; j < MAX_COL; i++) {
 			sum += mat[i][j];
 		}
 	}
