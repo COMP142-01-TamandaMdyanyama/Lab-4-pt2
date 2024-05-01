@@ -85,7 +85,7 @@ double findMax(const double mat[][MAX_COL], const int maxRow) {
 	double max = mat[0][0];
 	for (int i = 0; i < maxRow; i++) {
 		for (int j = 0; j < MAX_COL; j++) {
-			if (mat[i][j] < max)
+			if (mat[i][j] > max)
 				max = mat[i][j];
 		}
 	}
