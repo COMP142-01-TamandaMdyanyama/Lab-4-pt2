@@ -101,7 +101,7 @@ double findMax(const double mat[][MAX_COL], const int maxRow) {
 double sumAll(const double mat[][MAX_COL], const int maxRow) {
 	double sum = 0;
 	for (int i = 0; i < maxRow; i++) {
-		for (int j = 0; j < MAX_COL; i++) {
+		for (int j = 0; j < MAX_COL; j++) {
 			sum += mat[i][j];
 		}
 	}
