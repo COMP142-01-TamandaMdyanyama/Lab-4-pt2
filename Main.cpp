@@ -58,7 +58,7 @@ int main() {
 				cin >> col;
 			} while ((col < 0)||(col>MAX_COL));
 			
-			cout<< "\nSum of column "<< col << " is:"<< sumOfCol(mat, row, MAX_ROW)<<endl;
+			cout<< "\nSum of column "<< col << " is:"<< sumOfCol(mat, col, MAX_ROW)<<endl;
 			break;
 		case 5:
 			cout << "\nThe highest value in the matrix is :" << findMax(mat, MAX_ROW) << endl;
