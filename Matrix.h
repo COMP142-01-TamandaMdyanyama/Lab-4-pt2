@@ -17,4 +17,8 @@ double findMax(const double mat[][MAX_COL], const int maxRow);
 double sumAll(const double mat[][MAX_COL], const int maxRow);
 double average(const double mat[][MAX_COL], const int maxRow);
 
+//extensions
+double* sumOfRows(const double mat[][MAX_COL], const int maxRow);
+double* sumOfCols(const double mat[][MAX_COL], const int maxRow);
+
 #pragma once

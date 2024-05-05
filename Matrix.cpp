@@ -117,3 +117,32 @@ double sumAll(const double mat[][MAX_COL], const int maxRow) {
 double average(const double mat[][MAX_COL], const int maxRow) {
 	return sumAll(mat, maxRow) / (MAX_COL * maxRow);
 }
+
+double* sumOfRows(const double mat[][MAX_COL], const int maxRow) {
+	double* rowSums = new double[maxRow];
+	// Calculate the sum of each row
+	for (int i = 0; i < maxRow; ++i) {
+		rowSums[i] = 0.0; // Initialize to zero
+		for (int j = 0; j < MAX_COL; ++j) {
+			rowSums[i] += mat[i][j];
+		}
+	}
+
+	return rowSums;
+}
+
+double* sumOfCols(const double mat[][MAX_COL], const int maxRow) {
+	double* colSums = new double[MAX_COL];
+
+	for (int i = 0; i < MAX_COL; ++i) {
+		colSums[i] = 0.0;
+	}
+	// Calculate the sum of each column
+	for (int j = 0; j < MAX_COL; ++j) {
+		for (int i = 0; i < maxRow; ++i) {
+			colSums[j] += mat[i][j];
+		}
+	}
+
+	return colSums;
+}

@@ -22,6 +22,7 @@ int main() {
 	const int MAX_ROW = 5;
 	int choice;
 	double mat[MAX_ROW][MAX_COL] = { 0 };
+	double* sums = NULL;
 
 	do {
 		cout << "\n1) Fill with  random numbers " << endl;
@@ -31,7 +32,9 @@ int main() {
 		cout << "5) Find the maximum value" << endl;
 		cout << "6) Sum up all values in the matrix " << endl;
 		cout << "7) Calculate average number of matrix " << endl;
-		cout << "8) Exit " << endl;
+		cout << "8) Calculate sum for each row " << endl;
+		cout << "9) Calculate sum for each column " << endl;
+		cout << "10) Exit " << endl;
 		cout << " Please enter a choice " << endl;
 		cin >> choice;
 
@@ -69,12 +72,31 @@ int main() {
 		case 7:
 			cout << "\nThe average value of the matrix is: " << average(mat, MAX_ROW) << endl;
 			break;
+
 		case 8:
+			sums = sumOfRows(mat, MAX_ROW);
+
+			for (int i = 0; i < MAX_ROW; ++i) {
+				cout << "Sum of row " << i + 1 << ": " << sums[i] << endl;
+			}
+			
+
+			break;
+		case 9:
+			sums = sumOfCols(mat, MAX_ROW);
+
+			for (int i = 0; i < MAX_ROW; ++i) {
+				cout << "Sum of row " << i + 1 << ": " << sums[i] << endl;
+			}
+
+		case 10:
 			//No code needed
 			break;
 
 		}
-	} while (choice != 8);
+	} while (choice != 10);
+
+	delete[] sums;
 
 	return 0;
 }
